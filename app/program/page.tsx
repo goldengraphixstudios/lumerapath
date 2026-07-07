@@ -5,6 +5,7 @@ import OpenModalButton from "@/components/OpenModalButton";
 import WaitlistForm from "@/components/WaitlistForm";
 import Marquee from "@/components/Marquee";
 import PinnedJourneySection from "@/components/PinnedJourneySection";
+import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "The Bridge Accelerator™, The 8-Week Program",
@@ -14,14 +15,17 @@ export const metadata: Metadata = {
 
 const audience = [
   {
+    icon: "doorway" as const,
     title: "You're still in the room, and starting to wonder why.",
     body: "You hold a senior leadership position, and by every external measure you're succeeding. But privately, you're second-guessing your choices and quietly asking whether this is really the life you want to keep building.",
   },
   {
+    icon: "compass" as const,
     title: "You've just been laid off, and you refuse to just land anywhere.",
     body: "A layoff can feel like a crisis or a turning point. You're choosing to make it the latter. Before you update your resume and repeat the same pattern, you want to get clear on what you actually want your next chapter to look like.",
   },
   {
+    icon: "sparkle" as const,
     title: "You feel the pull toward something different, but you can't name it yet.",
     body: "You sense that a shift is coming, in your role, your industry, or the way you lead altogether. You don't want to make a move driven by exhaustion or fear. You want to move from clarity.",
   },
@@ -41,35 +45,38 @@ const included = [
   {
     title: "8 Weeks of Small-Group Coaching",
     body: "With executive women navigating similar crossroads, cohorts kept intentionally small so you receive focused attention and coaching tailored to your specific challenges.",
-    icon: "◎",
+    icon: "users" as const,
   },
   {
     title: "Two Coaches in the Room",
     body: "One specializing in deep inner clarity work, one bringing practical structure and execution strategy. A rare combination you won't find in most programs.",
-    icon: "✦",
+    icon: "coaches" as const,
   },
   {
     title: "Private Community Access",
     body: "For peer support, real connection, and real-time wins between sessions.",
-    icon: "❖",
+    icon: "community" as const,
   },
   {
     title: "Step-by-Step Curriculum",
     body: "With guided prompts, exercises, and worksheets designed to move you forward every single week.",
-    icon: "✧",
+    icon: "checklist" as const,
   },
 ];
 
 const bonuses = [
   {
+    icon: "refresh" as const,
     title: "Week 9, Life Happens Check-In™",
     body: "Progression. Recalibration. Real-life support. Revisit your roadmap, strengthen accountability, and reconnect with your vision when life gets in the way.",
   },
   {
+    icon: "clock" as const,
     title: "Weekly Integration Session",
     body: "One additional live hour each week to work through the material, clarify questions, and deepen implementation at your own pace.",
   },
   {
+    icon: "lifebuoy" as const,
     title: "Weekly Integration Support",
     body: "Curated content aligned with each week's theme, meditations, short videos, audios, articles, nervous system practices, and reflection prompts to support real-life integration between sessions.",
   },
@@ -313,7 +320,12 @@ export default function ProgramPage() {
                 leader everyone sees and the woman paying the price behind the
                 scenes.
               </p>
-              <p className="font-display text-2xl italic leading-snug text-gold-300">
+              <Icon
+                name="quote"
+                className="h-8 w-8 text-gold-400/70"
+                strokeWidth={1.4}
+              />
+              <p className="font-display -mt-1 text-2xl italic leading-snug text-gold-300">
                 So, if you want to keep rising, and want your success to feel
                 like it genuinely belongs to you, this is where that begins.
               </p>
@@ -350,10 +362,10 @@ export default function ProgramPage() {
                   aria-hidden
                 />
                 <span
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-400/15 text-gold-600 transition-all duration-500 group-hover:rotate-[360deg] group-hover:bg-gold-500 group-hover:text-white"
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-400/15 text-gold-600 transition-all duration-500 group-hover:-rotate-6 group-hover:bg-gold-500 group-hover:text-white"
                   aria-hidden
                 >
-                  ✓
+                  <Icon name={card.icon} className="h-6 w-6" />
                 </span>
                 <h3 className="font-display mt-6 text-2xl font-semibold leading-snug text-navy-900">
                   {card.title}
@@ -420,10 +432,10 @@ export default function ProgramPage() {
                   className="group flex items-start gap-4 rounded-2xl bg-white px-6 py-4 shadow-[0_8px_24px_-14px_rgb(18_32_63/0.18)] transition-all duration-400 hover:translate-x-1.5 hover:shadow-[0_14px_32px_-14px_rgb(195_146_46/0.4)]"
                 >
                   <span
-                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-400/15 text-xs text-gold-600 transition-colors duration-400 group-hover:bg-gold-500 group-hover:text-white"
+                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-400/15 text-gold-600 transition-colors duration-400 group-hover:bg-gold-500 group-hover:text-white"
                     aria-hidden
                   >
-                    ✓
+                    <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.2} />
                   </span>
                   <p className="text-sm leading-relaxed text-ink sm:text-base">
                     {item}
@@ -500,7 +512,8 @@ export default function ProgramPage() {
                   </div>
                 </div>
                 <div className="p-8 sm:p-10">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">
+                  <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">
+                    <Icon name="sparkle" className="h-4 w-4" strokeWidth={1.4} />
                     {coach.role}
                   </p>
                   <p className="mt-4 text-sm leading-relaxed text-ink-soft">
@@ -596,10 +609,10 @@ export default function ProgramPage() {
               <Reveal key={item.title} delay={i * 110} className="card-lux group p-8">
                 <div className="flex items-start gap-5">
                   <span
-                    className="font-display flex h-13 w-13 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-xl text-gold-300 shadow-soft transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                    className="flex h-13 w-13 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-gold-300 shadow-soft transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
                     aria-hidden
                   >
-                    {item.icon}
+                    <Icon name={item.icon} className="h-6 w-6" />
                   </span>
                   <div>
                     <h3 className="font-display text-2xl font-semibold text-navy-900">
@@ -649,13 +662,21 @@ export default function ProgramPage() {
                   className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/70 to-transparent"
                   aria-hidden
                 />
-                <span
-                  className="font-display text-4xl italic text-gold-400/50 transition-colors duration-500 group-hover:text-gold-500"
-                  aria-hidden
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h4 className="font-display mt-4 text-2xl font-semibold leading-snug text-navy-900">
+                <div className="flex items-center justify-between">
+                  <span
+                    className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-400/12 text-gold-600 transition-all duration-500 group-hover:bg-navy-900 group-hover:text-gold-300"
+                    aria-hidden
+                  >
+                    <Icon name={b.icon} className="h-6 w-6" />
+                  </span>
+                  <span
+                    className="font-display text-4xl italic text-gold-400/45 transition-colors duration-500 group-hover:text-gold-500"
+                    aria-hidden
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h4 className="font-display mt-5 text-2xl font-semibold leading-snug text-navy-900">
                   {b.title}
                 </h4>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">

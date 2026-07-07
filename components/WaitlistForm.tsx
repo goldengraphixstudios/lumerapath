@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { submitLead } from "@/lib/leads";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -11,16 +12,8 @@ export default function WaitlistForm() {
     e.preventDefault();
     setStatus("submitting");
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
-    try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "waitlist", ...data }),
-      });
-      setStatus(res.ok ? "success" : "error");
-    } catch {
-      setStatus("error");
-    }
+    const ok = await submitLead({ type: "waitlist", ...data });
+    setStatus(ok ? "success" : "error");
   };
 
   if (status === "success") {

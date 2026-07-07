@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { submitLead } from "@/lib/leads";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -11,17 +12,8 @@ export default function ContactForm() {
     event.preventDefault();
     setStatus("submitting");
     const data = Object.fromEntries(new FormData(event.currentTarget).entries());
-
-    try {
-      const response = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "contact", ...data }),
-      });
-      setStatus(response.ok ? "success" : "error");
-    } catch {
-      setStatus("error");
-    }
+    const ok = await submitLead({ type: "contact", ...data });
+    setStatus(ok ? "success" : "error");
   };
 
   if (status === "success") {

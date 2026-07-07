@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useModal } from "./ModalContext";
+import { submitLead as postLead } from "@/lib/leads";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -10,16 +11,7 @@ async function submitLead(
   form: HTMLFormElement
 ): Promise<boolean> {
   const data = Object.fromEntries(new FormData(form).entries());
-  try {
-    const res = await fetch("/api/leads", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ type, ...data }),
-    });
-    return res.ok;
-  } catch {
-    return false;
-  }
+  return postLead({ type, ...data });
 }
 
 function ModalShell({

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import JourneyGraphic from "./JourneyGraphic";
 
 const phases = [
   {
@@ -108,17 +109,17 @@ export default function PinnedJourneySection() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto grid w-full max-w-6xl flex-1 items-center gap-10 px-5 pt-24 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 lg:px-8">
+        <div className="relative z-10 mx-auto grid w-full max-w-6xl flex-1 items-center gap-10 px-5 pt-24 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:px-8">
           {/* Left: kinetic phase copy */}
           <div>
             <div className="flex items-center gap-4">
-              <span className="h-px w-10 bg-gold-500" aria-hidden />
-              <span className="text-[0.68rem] font-bold uppercase tracking-[0.34em] text-gold-700">
+              <span className="h-px w-12 bg-gold-500" aria-hidden />
+              <span className="text-[0.74rem] font-bold uppercase tracking-[0.34em] text-gold-700">
                 The 8-week journey
               </span>
             </div>
 
-            <div className="relative mt-6 min-h-[19rem] sm:min-h-[17rem]">
+            <div className="relative mt-7 min-h-[22rem] sm:min-h-[20rem]">
               {phases.map((phase, index) => (
                 <article
                   key={phase.phase}
@@ -127,28 +128,28 @@ export default function PinnedJourneySection() {
                   } ${index < activeIndex ? "is-past" : ""}`}
                 >
                   <div className="flex items-baseline gap-4">
-                    <span className="font-display text-6xl font-semibold leading-none text-gold-500/25 sm:text-7xl">
+                    <span className="font-display text-7xl font-semibold leading-none text-gold-500/25 sm:text-8xl">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h2 className="font-display text-4xl font-semibold leading-[1.02] text-navy-900 sm:text-5xl">
+                    <h2 className="font-display text-5xl font-semibold leading-[1.0] text-navy-900 sm:text-6xl lg:text-[4.25rem]">
                       {phase.phase}
                     </h2>
                   </div>
-                  <p className="mt-3 text-xs font-bold uppercase tracking-[0.28em] text-gold-700">
+                  <p className="mt-4 text-sm font-bold uppercase tracking-[0.26em] text-gold-700">
                     {phase.label}
                   </p>
-                  <p className="mt-5 max-w-xl leading-relaxed text-ink-soft sm:text-lg">
+                  <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">
                     {phase.description}
                   </p>
                 </article>
               ))}
             </div>
 
-            <div className="mt-2 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2.5">
               {phases.map((phase, index) => (
                 <span
                   key={phase.phase}
-                  className={`rounded-full border px-3.5 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] transition-all duration-500 ${
+                  className={`rounded-full border px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] transition-all duration-500 ${
                     index === activeIndex
                       ? "border-gold-500/50 bg-navy-900 text-gold-300"
                       : index < activeIndex
@@ -162,111 +163,91 @@ export default function PinnedJourneySection() {
             </div>
           </div>
 
-          {/* Right: navy itinerary panel */}
-          <div className="journey-panel p-7 sm:p-9" aria-hidden>
-            <div className="relative flex items-center justify-between">
-              <div>
-                <p className="text-[0.62rem] font-bold uppercase tracking-[0.28em] text-gold-300">
-                  The A3 Itinerary
-                </p>
-                <p className="font-display mt-1 text-2xl font-semibold text-cream">
-                  8 weeks, four movements
-                </p>
-              </div>
-              <div className="text-right">
-                <p className="font-display text-shimmer text-3xl font-semibold">
-                  {String(activeIndex + 1).padStart(2, "0")}
-                </p>
-                <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-cream/45">
-                  of 04
-                </p>
-              </div>
-            </div>
-
-            <div className="relative mt-7">
-              <div className="journey-spine">
-                <span style={{ transform: `scaleY(${spineFill})` }} />
-              </div>
-
-              <div className="space-y-1.5">
-                {phases.map((phase, index) => {
-                  const state =
-                    index === activeIndex
-                      ? "is-active"
-                      : index < activeIndex
-                        ? "is-done"
-                        : "";
+          {/* Right: animated phase medallion */}
+          <div className="flex flex-col items-center" aria-hidden>
+            <div className="journey-medallion">
+              {/* progress + phase-node ring */}
+              <svg className="journey-ring" viewBox="0 0 320 320" fill="none">
+                <circle cx="160" cy="160" r="150" stroke="rgb(15 28 54 / 0.1)" strokeWidth="2" />
+                <circle
+                  cx="160"
+                  cy="160"
+                  r="150"
+                  stroke="url(#jgProgress)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeDasharray={2 * Math.PI * 150}
+                  strokeDashoffset={2 * Math.PI * 150 * (1 - spineFill)}
+                  transform="rotate(-90 160 160)"
+                  style={{ transition: "stroke-dashoffset 0.25s linear" }}
+                />
+                <defs>
+                  <linearGradient id="jgProgress" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#a97c26" />
+                    <stop offset="55%" stopColor="#d4ab5f" />
+                    <stop offset="100%" stopColor="#f6e3af" />
+                  </linearGradient>
+                </defs>
+                {phases.map((_, i) => {
+                  const angle = (-90 + i * 90) * (Math.PI / 180);
+                  const cx = 160 + 150 * Math.cos(angle);
+                  const cy = 160 + 150 * Math.sin(angle);
+                  const reached = i <= activeIndex;
                   return (
-                    <div key={phase.phase} className={`journey-row ${state}`}>
-                      <div className="journey-row-head">
-                        <span className="journey-row-marker">
-                          {index < activeIndex ? "✓" : index + 1}
-                        </span>
-                        <div className="flex-1">
-                          <p
-                            className={`font-display text-xl font-semibold transition-colors duration-500 ${
-                              index === activeIndex
-                                ? "text-cream"
-                                : "text-cream/55"
-                            }`}
-                          >
-                            {phase.phase}
-                          </p>
-                          <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-cream/35">
-                            {phase.weeks[0].week.replace("Week ", "Wk ")}
-                            {" – "}
-                            {phase.weeks[1].week.replace("Week ", "")}
-                          </p>
-                        </div>
-                        <span
-                          className={`text-[0.6rem] font-bold uppercase tracking-[0.16em] transition-colors duration-500 ${
-                            index === activeIndex
-                              ? "text-gold-300"
-                              : "text-cream/25"
-                          }`}
-                        >
-                          {phase.label.split(" ")[0]}
-                        </span>
-                      </div>
-
-                      <div className="journey-weeks">
-                        <div>
-                          <div className="mt-3 grid gap-2.5">
-                            {phase.weeks.map((w) => (
-                              <div
-                                key={w.week}
-                                className="flex items-center gap-3 rounded-xl border border-gold-400/25 bg-cream/[0.06] px-4 py-3"
-                              >
-                                <span className="text-[0.58rem] font-bold uppercase tracking-[0.16em] text-gold-300">
-                                  {w.week}
-                                </span>
-                                <span className="font-display text-lg font-semibold text-cream">
-                                  {w.title}
-                                </span>
-                                <span className="ml-auto hidden rounded-full bg-gold-400/15 px-2.5 py-1 text-[0.54rem] font-bold uppercase tracking-[0.14em] text-gold-300 sm:inline">
-                                  {w.tag}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <g key={i} style={{ transition: "all 0.5s ease" }}>
+                      <circle
+                        cx={cx}
+                        cy={cy}
+                        r={i === activeIndex ? 11 : 7}
+                        fill={reached ? "#0f1c36" : "#f1e6d3"}
+                        stroke={reached ? "#d4ab5f" : "rgb(15 28 54 / 0.2)"}
+                        strokeWidth="2"
+                      />
+                      {i === activeIndex && (
+                        <circle cx={cx} cy={cy} r="11" fill="none" stroke="#d4ab5f" strokeWidth="2">
+                          <animate attributeName="r" values="11;20" dur="1.8s" repeatCount="indefinite" />
+                          <animate attributeName="opacity" values="0.7;0" dur="1.8s" repeatCount="indefinite" />
+                        </circle>
+                      )}
+                    </g>
                   );
                 })}
+              </svg>
+
+              {/* rotating dashed accent ring */}
+              <div className="journey-medallion-ring animate-spin-slow" aria-hidden />
+
+              {/* animated motif */}
+              <JourneyGraphic index={activeIndex} />
+
+              {/* phase index badge */}
+              <div className="journey-medallion-badge">
+                <span className="font-display text-shimmer text-2xl font-semibold">
+                  {String(activeIndex + 1).padStart(2, "0")}
+                </span>
+                <span className="text-[0.55rem] font-bold uppercase tracking-[0.22em] text-ink-soft/60">
+                  of 04
+                </span>
               </div>
             </div>
 
-            <div className="relative mt-7 flex items-center justify-between border-t border-cream/10 pt-5">
-              <p className="text-xs leading-relaxed text-cream/55">
-                Currently viewing{" "}
-                <span className="font-semibold text-gold-300">
-                  {active.phase}
-                </span>
-              </p>
-              <p className="font-display text-sm italic text-cream/45">
-                {active.label}
-              </p>
+            {/* active week cards */}
+            <div className="mt-8 grid w-full max-w-md gap-3 sm:grid-cols-2">
+              {active.weeks.map((w) => (
+                <div key={w.week} className="journey-week-card">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[0.6rem] font-bold uppercase tracking-[0.18em] text-gold-700">
+                      {w.week}
+                    </span>
+                    <span className="rounded-full bg-gold-400/15 px-2.5 py-1 text-[0.54rem] font-bold uppercase tracking-[0.14em] text-gold-700">
+                      {w.tag}
+                    </span>
+                  </div>
+                  <p className="font-display mt-2 text-xl font-semibold leading-tight text-navy-900">
+                    {w.title}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

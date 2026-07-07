@@ -919,169 +919,87 @@ body {
   transform: translateY(-30px);
 }
 
-.journey-phase-group {
+/* Journey medallion (right side, animated phase symbol) */
+.journey-medallion {
   position: relative;
-  border-radius: 1.3rem;
-  border: 1px solid transparent;
-  padding: 0.95rem 1.1rem;
-  opacity: 0.45;
-  transition:
-    opacity 0.5s ease,
-    border-color 0.5s ease,
-    background-color 0.5s ease,
-    transform 0.5s ease;
+  width: clamp(19rem, 30vw, 27rem);
+  aspect-ratio: 1;
 }
 
-.journey-phase-group.is-active {
+.journey-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 20px 44px rgb(15 28 54 / 0.18));
+}
+
+.journey-medallion-ring {
+  position: absolute;
+  inset: 9%;
+  border-radius: 9999px;
+  border: 1px dashed rgb(212 171 95 / 0.32);
+}
+
+.journey-motif {
+  position: absolute;
+  inset: 16%;
+}
+
+.journey-motif .jg-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(0.85) rotate(-6deg);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.journey-motif .jg-layer.is-active {
   opacity: 1;
-  border-color: rgb(227 198 140 / 0.28);
-  background: rgb(250 246 238 / 0.05);
-  transform: translateX(4px);
+  transform: none;
 }
 
-.journey-phase-weeks {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+.journey-motif svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-.journey-phase-group.is-active .journey-phase-weeks {
-  grid-template-rows: 1fr;
-}
-
-.journey-phase-weeks > div {
-  overflow: hidden;
-}
-
-.journey-node-dot {
-  display: grid;
-  height: 1.9rem;
-  width: 1.9rem;
-  flex-shrink: 0;
-  place-items: center;
-  border-radius: 9999px;
-  border: 1px solid rgb(250 246 238 / 0.18);
-  background: rgb(250 246 238 / 0.05);
-  color: rgb(250 246 238 / 0.42);
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  transition:
-    border-color 0.4s ease,
-    background-color 0.4s ease,
-    color 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-.journey-node-dot.is-lit {
-  border-color: rgb(227 198 140 / 0.7);
-  background: rgb(227 198 140 / 0.16);
-  color: var(--color-gold-300);
-  box-shadow: 0 0 16px rgb(212 171 95 / 0.4);
-}
-
-/* Journey itinerary panel (right side, high contrast navy) */
-.journey-panel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 2rem;
-  border: 1px solid rgb(227 198 140 / 0.22);
-  background:
-    radial-gradient(38rem 22rem at 82% -8%, rgb(212 171 95 / 0.16), transparent 60%),
-    linear-gradient(165deg, #16264a, #0a1223 78%);
-  box-shadow: 0 44px 90px -44px rgb(10 18 35 / 0.85);
-}
-
-.journey-panel::before {
-  content: "";
+.journey-medallion-badge {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgb(250 246 238 / 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(250 246 238 / 0.04) 1px, transparent 1px);
-  background-size: 46px 46px;
-  mask-image: radial-gradient(circle at 78% 12%, black, transparent 72%);
-}
-
-.journey-spine {
-  position: absolute;
-  top: 5.4rem;
-  bottom: 2rem;
-  left: 2.15rem;
-  width: 2px;
-  border-radius: 9999px;
-  background: rgb(250 246 238 / 0.1);
-  overflow: hidden;
-}
-
-.journey-spine span {
-  position: absolute;
-  inset: 0;
-  transform-origin: top;
-  border-radius: inherit;
-  background: linear-gradient(to bottom, #f6e3af, #d4ab5f, #a97c26);
-  box-shadow: 0 0 16px rgb(212 171 95 / 0.5);
-  transition: transform 0.2s linear;
-}
-
-.journey-row {
-  position: relative;
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-.journey-row-head {
+  bottom: -0.4rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-}
-
-.journey-row-marker {
-  display: grid;
-  height: 2.5rem;
-  width: 2.5rem;
-  flex-shrink: 0;
-  place-items: center;
+  gap: 0.1rem;
   border-radius: 9999px;
-  border: 1px solid rgb(250 246 238 / 0.18);
-  background: #0a1223;
-  color: rgb(250 246 238 / 0.5);
-  font-family: var(--font-display);
-  font-size: 1.1rem;
+  border: 1px solid rgb(212 171 95 / 0.35);
+  background: var(--color-cream);
+  padding: 0.55rem 1.2rem;
+  box-shadow: 0 14px 30px -16px rgb(15 28 54 / 0.4);
+}
+
+.journey-week-card {
+  border-radius: 1.1rem;
+  border: 1px solid rgb(15 28 54 / 0.08);
+  background: #fff;
+  padding: 1rem 1.15rem;
+  box-shadow: 0 16px 34px -26px rgb(15 28 54 / 0.4);
   transition:
-    border-color 0.45s ease,
-    background-color 0.45s ease,
-    color 0.45s ease,
-    box-shadow 0.45s ease,
-    transform 0.45s ease;
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
-.journey-row.is-active .journey-row-marker,
-.journey-row.is-done .journey-row-marker {
-  border-color: rgb(227 198 140 / 0.75);
-  color: var(--color-navy-950);
-  background: linear-gradient(140deg, #f6e3af, #d4ab5f);
-  box-shadow: 0 0 22px rgb(212 171 95 / 0.45);
-}
-
-.journey-row.is-active .journey-row-marker {
-  transform: scale(1.08);
-}
-
-.journey-weeks {
-  display: grid;
-  grid-template-rows: 0fr;
-  margin-left: 3.5rem;
-  transition: grid-template-rows 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.journey-row.is-active .journey-weeks {
-  grid-template-rows: 1fr;
-}
-
-.journey-weeks > div {
-  overflow: hidden;
+.journey-week-card:hover {
+  transform: translateY(-3px);
+  border-color: rgb(212 171 95 / 0.5);
+  box-shadow: 0 22px 44px -24px rgb(195 146 46 / 0.4);
 }
 
 @media (max-width: 767px) {

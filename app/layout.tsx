@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import LenisScroller from "@/components/LenisScroller";
 import IntroLoader from "@/components/IntroLoader";
+import PaymentGate from "@/components/PaymentGate";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Footer />
           <Modals />
         </ModalProvider>
+        <PaymentGate />
       </body>
     </html>
   );

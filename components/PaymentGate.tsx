@@ -7,7 +7,7 @@ import { useEffect } from "react";
  * for. When the client settles the invoice, set LOCKED to false (or delete the
  * <PaymentGate /> line in app/layout.tsx) and redeploy to unlock the site.
  */
-const LOCKED = true;
+const LOCKED = false;
 
 export default function PaymentGate() {
   useEffect(() => {

@@ -8,7 +8,7 @@ import PinnedJourneySection from "@/components/PinnedJourneySection";
 import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
-  title: "The Bridge Accelerator™, The 8-Week Program",
+  title: "The Bridge Identity Reset™, The 8-Week Program",
   description:
     "An 8-week leadership program built by former executives, for driven women leaders ready to move from exhaustion and self-doubt to clear, confident direction.",
 };
@@ -77,7 +77,7 @@ const bonuses = [
   },
   {
     icon: "lifebuoy" as const,
-    title: "Weekly Integration Support",
+    title: "Support Materials",
     body: "Curated content aligned with each week's theme, meditations, short videos, audios, articles, nervous system practices, and reflection prompts to support real-life integration between sessions.",
   },
 ];
@@ -107,7 +107,7 @@ export default function ProgramPage() {
           aria-hidden
           className="absolute right-5 top-1/2 hidden origin-right -translate-y-1/2 rotate-90 text-[0.58rem] font-bold uppercase tracking-[0.42em] text-gold-700/55 lg:block"
         >
-          Awareness &middot; Alignment &middot; Action &middot; Integration
+          Awareness &middot; Alignment &middot; Action
         </span>
 
         <div className="relative mx-auto grid min-h-[calc(100svh-9rem)] max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
@@ -130,15 +130,16 @@ export default function ProgramPage() {
                   />
                 </span>
                 <span className="text-[0.7rem] font-bold uppercase tracking-[0.3em] text-gold-700">
-                  The Bridge Accelerator&trade;
+                  The Bridge Identity Reset&trade;
                 </span>
               </div>
             </Reveal>
             <Reveal delay={110} variant="blur">
-              <h1 className="font-display mt-7 text-[2.9rem] font-semibold leading-[1.0] text-navy-900 sm:text-[3.5rem] lg:text-[4.2rem]">
-                Success, rebuilt to finally feel{" "}
+              <h1 className="font-display mt-7 text-[2.35rem] font-semibold leading-[1.04] text-navy-900 sm:text-[3rem] lg:text-[3.55rem]">
+                You&rsquo;ve Proven You Can Succeed. Now Imagine What Success
+                Can Look Like When It&rsquo;s{" "}
                 <span className="flourish text-shimmer italic">
-                  like yours.
+                  Built for You.
                   <svg viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden>
                     <path d="M4 18 C 80 8, 240 6, 316 14" />
                   </svg>
@@ -147,9 +148,17 @@ export default function ProgramPage() {
             </Reveal>
             <Reveal delay={190}>
               <p className="mt-7 max-w-xl leading-relaxed text-ink-soft sm:text-lg">
-                An 8-week leadership program for executive women who are done
-                proving they can carry the weight, and ready to lead from
-                clarity, conviction, and self-trust.
+                That&rsquo;s what becomes possible when you stop operating from
+                fear, outside approval, and the obligation to carry everything
+                alone, and start moving from clarity, conviction, and a sense
+                of purpose that genuinely feels like yours.
+              </p>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink-soft/85">
+                No magic formulas. No quick-fix mindset fluff. Just the deep
+                work that changes how you lead,{" "}
+                <em className="font-display text-base text-navy-900">
+                  for good.
+                </em>
               </p>
             </Reveal>
             <Reveal delay={250}>
@@ -186,14 +195,14 @@ export default function ProgramPage() {
               <div className="mt-8 flex items-center gap-4">
                 <div className="flex -space-x-3">
                   <Image
-                    src="/images/allye.jpg"
+                    src="/images/allye-new.jpg"
                     alt="Allye"
                     width={44}
                     height={44}
                     className="h-11 w-11 rounded-full border-2 border-cream object-cover object-top shadow-card"
                   />
                   <Image
-                    src="/images/amanda.jpeg"
+                    src="/images/amanda-new.jpeg"
                     alt="Amanda"
                     width={44}
                     height={44}
@@ -232,12 +241,12 @@ export default function ProgramPage() {
               <div className="arch relative overflow-hidden shadow-[0_44px_86px_-32px_rgb(15_28_54/0.45)]">
                 <div className="relative aspect-[4/4.7]">
                   <Image
-                    src="/images/allye-desk.jpg"
-                    alt="An executive coach leading with calm clarity"
+                    src="/images/allye-amanda.jpg"
+                    alt="Allye and Amanda, the executives-turned-coaches behind the program"
                     fill
                     priority
                     sizes="(min-width: 1024px) 26rem, 88vw"
-                    className="object-cover object-[50%_18%]"
+                    className="object-cover object-[42%_26%]"
                   />
                 </div>
                 <div
@@ -317,8 +326,8 @@ export default function ProgramPage() {
                 But if the real issue is what&rsquo;s happening beneath the
                 surface, more polish won&rsquo;t reach it. You can&rsquo;t
                 strategize your way out of a deep internal conflict between the
-                leader everyone sees and the woman paying the price behind the
-                scenes.
+                leader everyone sees and the woman quietly overwhelmed and
+                running on empty behind the scenes.
               </p>
               <Icon
                 name="quote"
@@ -378,7 +387,7 @@ export default function ProgramPage() {
           </div>
           <Reveal className="mt-12 text-center">
             <p className="font-display text-2xl italic text-gold-600">
-              Wherever you are right now, The Bridge Accelerator&trade; meets
+              Wherever you are right now, The Bridge Identity Reset&trade; meets
               you there, and helps you move forward with intention.
             </p>
           </Reveal>
@@ -469,20 +478,20 @@ export default function ProgramPage() {
           <div className="mt-16 grid gap-8 lg:grid-cols-2">
             {[
               {
-                img: "/images/allye.jpg",
+                img: "/images/allye-new.jpg",
                 alt: "Allye, ICF-certified executive coach",
                 name: "Allye",
                 role: "ICF-Certified Executive Coach",
-                pos: "object-[50%_30%]",
+                pos: "object-[50%_18%]",
                 bio: "Before becoming an ICF-certified executive coach, Allye spent more than two decades as a senior executive leading large-scale transformations inside global Fortune 500 companies, building complex strategies, navigating high-stakes environments, and guiding multicultural teams through significant change. Along the way, a cancer diagnosis transformed everything she thought she knew about leadership, success, and what it means to truly show up. That experience taught her what no boardroom ever could: how to lead through adversity without losing yourself in the process.",
                 variant: "left" as const,
               },
               {
-                img: "/images/amanda.jpeg",
+                img: "/images/amanda-new.jpeg",
                 alt: "Amanda, executive coach and program strategist",
                 name: "Amanda",
                 role: "Executive Coach · Program Strategist",
-                pos: "object-[50%_25%]",
+                pos: "object-[50%_24%]",
                 bio: "Amanda brings 15+ years in demanding corporate environments, directing complex programs, managing large portfolios, and overseeing teams of 180+ consultants. She knows firsthand what it means to be the person everyone relies on, while quietly carrying far more than anyone around her could see.",
                 variant: "right" as const,
               },
@@ -532,10 +541,12 @@ export default function ProgramPage() {
               real gap, the distance between the leader everyone saw and the
               woman who wanted more depth, meaning, and purpose. So we stopped
               looking for shortcuts. We did the deep work in our own lives, and
-              built a method that actually works for women in leadership.
+              built a method that actually works for women in leadership. The
+              kind of woman who wants success and prosperity, but also real
+              connection and a life she genuinely loves.
             </p>
             <p className="font-display mt-7 text-2xl italic leading-snug text-navy-900">
-              That work became The Bridge Accelerator&trade;, a structured,
+              That work became The Bridge Identity Reset&trade;, a structured,
               deeply supportive 8-week program that moves driven women leaders
               from exhaustion and internal noise into a grounded sense of
               direction that finally feels{" "}
@@ -573,7 +584,7 @@ export default function ProgramPage() {
               <span className="text-shimmer italic">officially invited.</span>
             </h2>
             <p className="mx-auto mt-7 max-w-2xl leading-relaxed text-cream/80">
-              Join The Bridge Accelerator&trade;, the only 8-week leadership
+              Join The Bridge Identity Reset&trade;, the only 8-week leadership
               program with high-touch group coaching built by and for executive
               women. Designed to move you from confusion, lack of purpose, and
               self-doubt into clear, confident direction that finally feels like
@@ -714,7 +725,7 @@ export default function ProgramPage() {
             <h2 className="font-display mt-6 text-4xl font-semibold leading-tight sm:text-5xl">
               Join the Waitlist for{" "}
               <span className="text-shimmer italic">
-                The Bridge Accelerator&trade;
+                The Bridge Identity Reset&trade;
               </span>
             </h2>
             <p className="mx-auto mt-7 max-w-2xl leading-relaxed text-cream/80">

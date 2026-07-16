@@ -2,10 +2,9 @@
 
 /**
  * Animated line-art symbols for the 8-week journey medallion.
- *   0 Awareness  — an opening eye (seeing the pattern)
- *   1 Alignment  — a compass needle finding true north
- *   2 Action     — ascending steps with a climbing light
- *   3 Integration— a north star, anchored and radiant
+ *   0 Awareness — an opening eye (seeing the pattern)
+ *   1 Alignment — a compass needle finding true north
+ *   2 Action    — ascending steps with a climbing light
  */
 
 const GOLD = "#d4ab5f";
@@ -20,13 +19,14 @@ function Eye() {
         const r1 = 128;
         const r2 = 140;
         const rad = (a * Math.PI) / 180;
+        const rnd = (v: number) => Math.round(v * 100) / 100;
         return (
           <line
             key={a}
-            x1={160 + r1 * Math.cos(rad)}
-            y1={160 + r1 * Math.sin(rad)}
-            x2={160 + r2 * Math.cos(rad)}
-            y2={160 + r2 * Math.sin(rad)}
+            x1={rnd(160 + r1 * Math.cos(rad))}
+            y1={rnd(160 + r1 * Math.sin(rad))}
+            x2={rnd(160 + r2 * Math.cos(rad))}
+            y2={rnd(160 + r2 * Math.sin(rad))}
             stroke={GOLD}
             strokeWidth="2"
             opacity="0.4"
@@ -61,13 +61,14 @@ function Compass() {
       <circle cx="160" cy="160" r="108" stroke={GOLD} strokeWidth="2" opacity="0.7" />
       {cardinals.map((a) => {
         const rad = (a * Math.PI) / 180;
+        const rnd = (v: number) => Math.round(v * 100) / 100;
         return (
           <line
             key={a}
-            x1={160 + 108 * Math.cos(rad)}
-            y1={160 + 108 * Math.sin(rad)}
-            x2={160 + 92 * Math.cos(rad)}
-            y2={160 + 92 * Math.sin(rad)}
+            x1={rnd(160 + 108 * Math.cos(rad))}
+            y1={rnd(160 + 108 * Math.sin(rad))}
+            x2={rnd(160 + 92 * Math.cos(rad))}
+            y2={rnd(160 + 92 * Math.sin(rad))}
             stroke={GOLD}
             strokeWidth="2.5"
             opacity="0.7"
@@ -117,35 +118,7 @@ function Steps() {
   );
 }
 
-function Star() {
-  const orbit = "M160 54 A106 106 0 1 1 159.9 54 Z";
-  return (
-    <svg viewBox="0 0 320 320" fill="none">
-      <circle cx="160" cy="160" r="128" stroke={GOLD} strokeWidth="1.5" strokeDasharray="3 13" opacity="0.35">
-        <animateTransform attributeName="transform" type="rotate" from="0 160 160" to="360 160 160" dur="50s" repeatCount="indefinite" />
-      </circle>
-      <path id="pgOrbit" d={orbit} stroke={GOLD} strokeWidth="1" opacity="0.25" />
-      <g>
-        <animateTransform attributeName="transform" type="rotate" from="0 160 160" to="360 160 160" dur="44s" repeatCount="indefinite" />
-        <path d="M160 44 L177 143 L276 160 L177 177 L160 276 L143 177 L44 160 L143 143 Z" fill={GOLD} fillOpacity="0.12" stroke={GOLD} strokeWidth="1.5" />
-      </g>
-      <path d="M160 98 L170 150 L222 160 L170 170 L160 222 L150 170 L98 160 L150 150 Z" fill={GOLD_MD}>
-        <animateTransform attributeName="transform" type="rotate" from="360 160 160" to="0 160 160" dur="30s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
-      </path>
-      <circle cx="160" cy="160" r="7" fill={GOLD_LT}>
-        <animate attributeName="r" values="6;9;6" dur="3s" repeatCount="indefinite" />
-      </circle>
-      <circle r="5.5" fill={GOLD_LT}>
-        <animateMotion dur="6s" repeatCount="indefinite">
-          <mpath href="#pgOrbit" />
-        </animateMotion>
-      </circle>
-    </svg>
-  );
-}
-
-const motifs = [Eye, Compass, Steps, Star];
+const motifs = [Eye, Compass, Steps];
 
 export default function JourneyGraphic({ index }: { index: number }) {
   return (

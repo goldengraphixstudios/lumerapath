@@ -1,5 +1,5 @@
 /**
- * Line-art icon set for The Bridge Accelerator (program + shared sections).
+ * Line-art icon set for The Bridge Identity Reset (program + shared sections).
  * Icons are stroke-based and inherit `currentColor`, so they take on whatever
  * text color the parent sets (gold on cream, gold-300 on navy, etc). Keep the
  * homepage untouched; this is used across the program page sections.

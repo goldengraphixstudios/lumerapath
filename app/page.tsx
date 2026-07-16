@@ -9,9 +9,9 @@ import PinnedShiftSection from "@/components/PinnedShiftSection";
 import ContactSection from "@/components/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Stop Performing Success. Start Owning It. | Lumera Path",
+  title: "You Don't Need a New Strategy. You Need an Identity Reset. | The Bridge Identity Reset™",
   description:
-    "We work with high-performing women who are ready to stop leading from pressure, fear, and overwhelm, and start leading from purpose.",
+    "The Bridge Identity Reset™ helps high-performing women leaders close the gap between the person the world sees and the woman quietly overwhelmed and running on empty, in 8 weeks.",
 };
 
 const forYouIf = [
@@ -67,10 +67,10 @@ export default function HomePage() {
               </span>
             </Reveal>
             <Reveal delay={120} variant="blur">
-              <h1 className="font-display mt-7 text-5xl font-semibold leading-[1.04] text-navy-900 sm:text-6xl lg:text-[4.6rem]">
-                Stop Performing Success.{" "}
+              <h1 className="font-display mt-7 text-[2.8rem] font-semibold leading-[1.04] text-navy-900 sm:text-6xl lg:text-[4.2rem]">
+                You Don&rsquo;t Need a New Strategy. You Need an{" "}
                 <span className="flourish text-shimmer italic">
-                  Start Owning It.
+                  Identity Reset.
                   <svg viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden>
                     <path d="M4 18 C 80 8, 240 6, 316 14" />
                   </svg>
@@ -79,18 +79,13 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={240}>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft">
-                We work with high-performing women who are ready to stop leading
-                from pressure, fear, and overwhelm, and start leading from{" "}
-                <em className="font-display text-xl text-navy-900">purpose.</em>
-              </p>
-            </Reveal>
-            <Reveal delay={320}>
-              <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">
-                We help you build the self-awareness to see what&rsquo;s actually
-                driving your decisions, the emotional resilience to stop
-                second-guessing yourself, and a clear plan aligned with what you
-                actually want, so your next chapter feels as good on the inside
-                as it looks on the outside.
+                The Bridge Identity Reset&trade; helps high-performing women
+                leaders close the gap between the person the world sees and the
+                woman quietly overwhelmed and running on empty, who is done
+                letting her workload compromise what really matters to her,{" "}
+                <em className="font-display text-xl text-navy-900">
+                  in 8 weeks.
+                </em>
               </p>
             </Reveal>
             <Reveal delay={420}>
@@ -127,15 +122,16 @@ export default function HomePage() {
               <Sparkle className="-left-2 bottom-24 text-sm" />
 
               <div className="arch relative overflow-hidden shadow-[0_40px_80px_-30px_rgb(15_28_54/0.45)]">
-                <Image
-                  src="/images/coach-hero.jpg"
-                  alt="A grounded, confident executive woman"
-                  width={1086}
-                  height={1448}
-                  priority
-                  sizes="(min-width: 640px) 28rem, 100vw"
-                  className="w-full object-cover"
-                />
+                <div className="relative aspect-[4/4.4]">
+                  <Image
+                    src="/images/allye-amanda.jpg"
+                    alt="Allye and Amanda, the coaches behind The Bridge Identity Reset"
+                    fill
+                    priority
+                    sizes="(min-width: 640px) 28rem, 100vw"
+                    className="object-cover object-[42%_30%]"
+                  />
+                </div>
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-navy-950/25 via-transparent to-transparent"
                   aria-hidden
@@ -220,14 +216,15 @@ export default function HomePage() {
                   aria-hidden
                 />
                 <div className="arch-sm photo-zoom relative overflow-hidden shadow-[0_36px_70px_-28px_rgb(15_28_54/0.4)]">
-                  <Image
-                    src="/images/allye-desk.jpg"
-                    alt="A calm, grounded leader reconnecting with herself"
-                    width={1199}
-                    height={1312}
-                    sizes="(min-width: 640px) 28rem, 100vw"
-                    className="w-full object-cover"
-                  />
+                  <div className="relative aspect-[4/4.4]">
+                    <Image
+                      src="/images/allye-amanda.jpg"
+                      alt="Allye and Amanda working side by side"
+                      fill
+                      sizes="(min-width: 640px) 28rem, 100vw"
+                      className="object-cover object-[58%_28%]"
+                    />
+                  </div>
                 </div>
                 <div
                   className="arch-sm pointer-events-none absolute inset-0 -translate-x-3 translate-y-3 border border-gold-500/40"
@@ -255,10 +252,8 @@ export default function HomePage() {
               <Reveal>
                 <p className="overline-label">The way back</p>
                 <h2 className="font-display mt-5 text-4xl font-semibold leading-tight text-navy-900 sm:text-5xl">
-                  This Is How You{" "}
-                  <span className="text-shimmer italic">
-                    Come Back to Yourself.
-                  </span>
+                  This Is How You Come Back to{" "}
+                  <span className="text-shimmer italic">Your Identity.</span>
                 </h2>
               </Reveal>
               <Reveal delay={120}>
@@ -266,7 +261,7 @@ export default function HomePage() {
                   You don&rsquo;t need more hype, quick fixes, or
                   &ldquo;confidence tips&rdquo; that just teach you how to
                   achieve more. You&rsquo;re already there. That&rsquo;s why The
-                  Bridge Accelerator&trade; was built by former
+                  Bridge Identity Reset&trade; was built by former
                   executives-turned-coaches who learned this the hard way, so
                   you don&rsquo;t have to. It&rsquo;s designed for ambitious
                   women under real pressure who need real traction without
@@ -367,23 +362,28 @@ export default function HomePage() {
                     Free live training
                   </span>
                   <h2 className="font-display mt-6 text-3xl font-semibold leading-tight text-navy-900 sm:text-[2.6rem]">
-                    The Leadership Shift from{" "}
-                    <span className="italic">Performance</span> to{" "}
-                    <span className="text-shimmer italic">Alignment</span>
+                    The Three Hidden Truths Behind{" "}
+                    <span className="text-shimmer italic">
+                      the Success Trap
+                    </span>
                   </h2>
-                  <p className="mt-6 leading-relaxed text-ink-soft">
-                    Learn how to lead with clarity, confidence, and purpose, 
-                    without exhausting yourself trying to prove, please, or hold
-                    everything together.
+                  <p className="mt-6 font-medium leading-relaxed text-navy-900">
+                    Why high-achieving women keep returning to the same
+                    patterns, even after coaching, books, and leadership
+                    programs.
                   </p>
                   <p className="mt-4 leading-relaxed text-ink-soft">
-                    In this free training, we&rsquo;ll walk you through the{" "}
-                    <strong className="text-navy-900">A3 Flow Method</strong>, 
-                    a practical framework for ambitious, high-performing women
-                    who are excelling on the outside but quietly losing
-                    themselves on the inside, who need to get clear faster,
-                    stop leading from pressure, and build a path forward
-                    designed around who they actually are.
+                    You&rsquo;ve invested in leadership programs, read the
+                    books, worked with coaches, and built a successful career.
+                    Yet something still feels out of alignment.
+                  </p>
+                  <p className="mt-4 leading-relaxed text-ink-soft">
+                    In this complimentary executive masterclass, you&rsquo;ll
+                    discover the three hidden truths that explain why so many
+                    high-achieving women keep returning to the same patterns,
+                    and why lasting transformation begins with an{" "}
+                    <strong className="text-navy-900">Identity Reset</strong>,
+                    not simply another strategy.
                   </p>
                   <OpenModalButton modal="training" className="btn btn-navy mt-9">
                     Save My Seat
@@ -392,19 +392,36 @@ export default function HomePage() {
                     </span>
                   </OpenModalButton>
                 </div>
-                <div className="relative mx-auto flex max-w-xs flex-col items-center text-center">
+                <div className="relative mx-auto flex w-full max-w-xs flex-col items-center text-center">
                   <div
-                    className="animate-spin-slow pointer-events-none absolute -inset-6 rounded-full border border-dashed border-gold-500/40"
+                    className="animate-spin-slow pointer-events-none absolute -right-5 -top-5 h-28 w-28 rounded-full border border-dashed border-gold-500/50"
                     aria-hidden
                   />
-                  <Image
-                    src="/images/a3flows-logo.png"
-                    alt="A3 Flows, Awareness. Alignment. Action."
-                    width={300}
-                    height={226}
-                    className="animate-float w-52 drop-shadow-[0_16px_30px_rgba(169,124,38,0.25)]"
-                  />
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-ink-soft/70">
+                  <div className="relative w-full">
+                    <div className="relative overflow-hidden rounded-[1.6rem] shadow-[0_30px_60px_-24px_rgb(15_28_54/0.45)]">
+                      <div className="relative aspect-[4/4.6]">
+                        <Image
+                          src="/images/allye-amanda.jpg"
+                          alt="Allye and Amanda, your masterclass hosts"
+                          fill
+                          sizes="20rem"
+                          className="object-cover object-[42%_26%]"
+                        />
+                      </div>
+                      <div
+                        className="absolute inset-0 bg-gradient-to-t from-navy-950/45 via-transparent to-transparent"
+                        aria-hidden
+                      />
+                      <p className="absolute inset-x-0 bottom-4 text-[0.62rem] font-bold uppercase tracking-[0.24em] text-cream">
+                        Hosted live by Allye + Amanda
+                      </p>
+                    </div>
+                    <div
+                      className="pointer-events-none absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-[1.6rem] border border-gold-500/40"
+                      aria-hidden
+                    />
+                  </div>
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-ink-soft/70">
                     90 minutes &middot; Live &middot; Free
                   </p>
                 </div>
@@ -433,7 +450,7 @@ export default function HomePage() {
                 />
                 <div>
                   <p className="overline-label overline-label--bare overline-label--light">
-                    The Bridge Accelerator&trade; &middot;{" "}
+                    The Bridge Identity Reset&trade; &middot;{" "}
                     <CountUp end={8} className="text-gold-300" />-week program
                   </p>
                   <p className="font-display mt-2 max-w-xl text-2xl font-semibold leading-snug text-cream sm:text-3xl">

@@ -24,13 +24,13 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: "The Bridge Accelerator™ | Lumera Path",
+    default: "The Bridge Identity Reset™ | Lumera Path",
     template: "%s | Lumera Path",
   },
   description:
     "An 8-week leadership program for high-performing women ready to stop leading from pressure, fear, and overwhelm, and start leading from purpose.",
   openGraph: {
-    title: "The Bridge Accelerator™ | Lumera Path",
+    title: "The Bridge Identity Reset™ | Lumera Path",
     description:
       "Stop performing success. Start owning it. An 8-week program for driven women leaders built by former executives.",
     type: "website",

@@ -114,22 +114,29 @@ function FreeTrainingModal() {
         id="training-modal-title"
         className="font-display mt-3 text-[1.9rem] font-semibold leading-tight text-navy-900"
       >
-        How Executive Women Are Reclaiming Their Leadership, {" "}
-        <span className="italic text-gold-600">
-          Without Sacrificing the Life They Actually Want
-        </span>
+        The Three Hidden Truths Behind{" "}
+        <span className="italic text-gold-600">the Success Trap</span>
       </h3>
-      <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-        For driven women in senior leadership who are ready for a clearer, more
-        fulfilling path forward, with the impact, alignment, and success that
-        actually feels like theirs.
+      <p className="mt-4 font-medium leading-relaxed text-navy-900">
+        You&rsquo;ve built a successful life. So why doesn&rsquo;t it feel
+        fully like yours anymore?
+      </p>
+      <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+        Join this complimentary executive masterclass and discover why so many
+        high-achieving women keep returning to the same patterns, even after
+        coaching, books, and leadership programs, and why lasting
+        transformation begins with an Identity Reset.
+      </p>
+      <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-gold-700">
+        In this free 90-minute masterclass, you&rsquo;ll discover:
       </p>
 
-      <ul className="mt-5 space-y-3">
+      <ul className="mt-3 space-y-3">
         {[
-          "Identify what's been quietly driving your decisions, and how to change it from the inside out.",
-          "Gain immediate clarity on your next move, and the confidence to act on it without second-guessing yourself.",
-          "Build a leadership foundation that protects your energy, your relationships, and your future.",
+          "Why success can start feeling disconnected.",
+          "The hidden identity patterns keeping you stuck.",
+          "Why awareness alone is not enough.",
+          "How The Bridge Identity Reset™ helps you reconnect with yourself and build what's next.",
         ].map((item) => (
           <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink">
             <span className="mt-0.5 font-semibold text-gold-600" aria-hidden>

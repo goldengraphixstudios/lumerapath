@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import OpenModalButton from "./OpenModalButton";
 import ShiftGraphic from "./ShiftGraphic";
@@ -21,18 +22,18 @@ const beats = [
     body: "Every rescue, every extra yes, every silent compromise trains the room to expect more from the version of you that actually needs rest, clarity, and a new standard.",
   },
   {
-    kicker: "The interruption",
+    kicker: "The disconnection",
     number: "03",
-    accent: "Clarity",
-    title: "Clarity begins the moment the noise is finally given structure.",
-    body: "The work is not more intensity. It is a clean mirror, a grounded room, and a method that separates truth from pressure before you decide the next move.",
+    accent: "Disconnection",
+    title: "You can execute almost anything, except answer this.",
+    body: "What do I actually want? What am I building toward? What legacy do I care about?",
   },
   {
-    kicker: "The bridge",
+    kicker: "The corporate high-performance trap",
     number: "04",
-    accent: "Bridge",
-    title: "You never had to abandon ambition to stop abandoning yourself.",
-    body: "The Bridge Accelerator turns awareness into alignment, and alignment into action, so you leave with a way of leading that holds both your ambition and your actual life.",
+    accent: "Trap",
+    title: "An operating system built on over-functioning and always being the one everyone leans on.",
+    body: "It gets results, but it slowly pulls you further from yourself.",
   },
 ];
 
@@ -77,13 +78,30 @@ export default function PinnedShiftSection() {
   );
   const active = beats[activeIndex];
 
+  // Jump directly to a beat (Amanda's request: clickable navigation instead
+  // of discovering the scroll interaction).
+  const goToBeat = (index: number) => {
+    const section = ref.current;
+    if (!section) return;
+    const travel = section.offsetHeight - window.innerHeight;
+    const top =
+      window.scrollY +
+      section.getBoundingClientRect().top +
+      (travel * (index + 0.5)) / beats.length;
+    if (window.__lenis) {
+      window.__lenis.scrollTo(top, { duration: 1.1 });
+    } else {
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
   return (
     <section ref={ref} className="pinned-shift relative h-[560vh] bg-navy-950">
       <div className="sticky top-0 flex h-svh flex-col overflow-hidden text-cream">
         {/* Duotone backdrop */}
         <div className="absolute inset-0" aria-hidden>
           <Image
-            src="/images/coach-office.jpg"
+            src="/images/allye-amanda.jpg"
             alt=""
             fill
             sizes="100vw"
@@ -112,20 +130,26 @@ export default function PinnedShiftSection() {
               {active.kicker}
             </span>
           </div>
-          <div className="hidden items-center gap-2.5 md:flex" aria-hidden>
+          <div className="flex items-center gap-2 sm:gap-2.5">
             {beats.map((beat, index) => (
-              <span
+              <button
                 key={beat.number}
-                className={`h-1 rounded-full transition-all duration-500 ${
+                type="button"
+                onClick={() => goToBeat(index)}
+                aria-label={`Go to part ${index + 1}: ${beat.kicker}`}
+                aria-current={index === activeIndex ? "true" : undefined}
+                className={`flex h-8 w-8 items-center justify-center rounded-full border text-[0.72rem] font-bold transition-all duration-500 sm:h-9 sm:w-9 ${
                   index === activeIndex
-                    ? "w-10 bg-gold-400 shadow-[0_0_12px_rgb(212_171_95/0.7)]"
+                    ? "border-gold-400 bg-gold-400 text-navy-950 shadow-[0_0_16px_rgb(212_171_95/0.6)]"
                     : index < activeIndex
-                      ? "w-6 bg-gold-500/70"
-                      : "w-6 bg-cream/15"
+                      ? "border-gold-500/60 bg-gold-500/15 text-gold-300 hover:bg-gold-500/30"
+                      : "border-cream/25 text-cream/55 hover:border-gold-400/60 hover:text-gold-300"
                 }`}
-              />
+              >
+                {index + 1}
+              </button>
             ))}
-            <span className="font-display ml-3 text-sm italic text-cream/55">
+            <span className="font-display ml-2 hidden text-sm italic text-cream/55 md:inline">
               {active.number} / 04
             </span>
           </div>
@@ -153,7 +177,7 @@ export default function PinnedShiftSection() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <OpenModalButton modal="training" className="btn btn-gold">
                 Get the Free Training
                 <span className="btn-arrow" aria-hidden>
@@ -163,6 +187,9 @@ export default function PinnedShiftSection() {
               <OpenModalButton modal="clarity" className="btn btn-outline-light">
                 Book a Clarity Call
               </OpenModalButton>
+              <Link href="/program" className="btn btn-outline-light">
+                Explore the Program
+              </Link>
             </div>
             <p className="mt-5 text-xs tracking-wide text-cream/45">
               90 minutes, live and free. No pitch, no pressure.

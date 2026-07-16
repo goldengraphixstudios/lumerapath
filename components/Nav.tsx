@@ -17,23 +17,26 @@ function Logo() {
     <Link
       href="/"
       className="group flex items-center gap-3"
-      aria-label="Lumera Path home"
+      aria-label="The Bridge Identity Reset home"
     >
       <Image
-        src="/images/lumerapath-mark.png"
+        src="/images/bridge-lp-logo.png"
         alt=""
         aria-hidden
-        width={44}
-        height={52}
+        width={48}
+        height={48}
         priority
-        className="h-11 w-auto transition-transform duration-500 group-hover:scale-105"
+        className="h-11 w-11 object-contain transition-transform duration-500 group-hover:scale-105"
       />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-[1.35rem] font-semibold tracking-[0.06em] text-navy-900">
-          LUMERA
+        <span className="font-display text-[1.12rem] font-semibold leading-[1.05] tracking-[0.02em] text-navy-900 sm:text-[1.2rem]">
+          The Bridge
         </span>
-        <span className="mt-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.5em] text-gold-600">
-          Path
+        <span className="mt-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.3em] text-gold-600">
+          Identity Reset&trade;
+        </span>
+        <span className="mt-1 text-[0.52rem] font-medium uppercase tracking-[0.18em] text-ink-soft/60">
+          by LumeraPath
         </span>
       </span>
     </Link>

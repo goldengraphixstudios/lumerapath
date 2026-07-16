@@ -30,13 +30,14 @@ export default function Footer() {
             className="animate-float h-20 w-20 object-contain drop-shadow-[0_10px_25px_rgba(212,171,95,0.35)]"
           />
           <p className="font-display max-w-3xl text-3xl font-medium italic leading-snug text-cream sm:text-4xl">
-            You don&rsquo;t have to choose between{" "}
-            <span className="text-shimmer not-italic font-semibold">ambition</span> and{" "}
+            The future you&rsquo;re looking for doesn&rsquo;t require less{" "}
+            <span className="text-shimmer not-italic font-semibold">ambition</span>. It requires deeper{" "}
             <span className="text-shimmer not-italic font-semibold">alignment</span>.
           </p>
           <p className="max-w-xl text-sm leading-relaxed text-cream/65">
-            The Bridge Accelerator&trade; is where you reconnect with you, and
-            build what&rsquo;s next. Real transformation. Real life. Real you.
+            The Bridge Identity Reset&trade; is an eight-week journey to help
+            you reconnect with yourself and build what comes next with clarity,
+            confidence, and purpose.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row">
             <button
@@ -56,6 +57,9 @@ export default function Footer() {
             >
               Book a Clarity Call
             </button>
+            <Link href="/program" className="btn btn-outline-light">
+              Explore the Program
+            </Link>
           </div>
         </div>
       </div>
@@ -105,7 +109,7 @@ export default function Footer() {
                   href="/program"
                   className="transition-colors hover:text-gold-300"
                 >
-                  The Bridge Accelerator&trade;
+                  The Bridge Identity Reset&trade;
                 </Link>
               </li>
               <li>
@@ -165,7 +169,7 @@ export default function Footer() {
         <div className="mt-14 flex flex-col items-center gap-4 border-t border-cream/10 pt-8 sm:flex-row sm:justify-between">
           <p className="text-xs text-cream/45">
             &copy; {new Date().getFullYear()} Lumera Path. All rights reserved.
-            The Bridge Accelerator&trade; and the A3 Flow Method are trademarks
+            The Bridge Identity Reset&trade; and the A3 Flow Method are trademarks
             of Lumera Path.
           </p>
           <p className="text-xs uppercase tracking-[0.25em] text-gold-400/80">

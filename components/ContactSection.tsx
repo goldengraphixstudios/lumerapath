@@ -92,14 +92,14 @@ export default function ContactSection() {
             <div className="mt-10 flex items-center gap-4 border-t border-cream/10 pt-6">
               <div className="flex -space-x-3">
                 <Image
-                  src="/images/allye.jpg"
+                  src="/images/allye-new.jpg"
                   alt="Allye"
                   width={44}
                   height={44}
                   className="h-11 w-11 rounded-full border-2 border-navy-900 object-cover object-top"
                 />
                 <Image
-                  src="/images/amanda.jpeg"
+                  src="/images/amanda-new.jpeg"
                   alt="Amanda"
                   width={44}
                   height={44}

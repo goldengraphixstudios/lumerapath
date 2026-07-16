@@ -92,7 +92,7 @@ export default function ContactForm() {
               Choose one, we&rsquo;ll point you the right way
             </option>
             <option>Get the free training</option>
-            <option>Join the Bridge Accelerator waitlist</option>
+            <option>Join the Bridge Identity Reset waitlist</option>
             <option>Book a clarity call</option>
             <option>Ask about private 1:1 coaching</option>
             <option>Something else</option>

@@ -750,7 +750,7 @@ body {
 .pinned-graphic {
   position: absolute;
   top: 50%;
-  right: clamp(0rem, 2vw, 2.5rem);
+  right: clamp(4rem, 11vw, 13rem);
   z-index: 3;
   width: clamp(17rem, 24vw, 27rem);
   aspect-ratio: 1;

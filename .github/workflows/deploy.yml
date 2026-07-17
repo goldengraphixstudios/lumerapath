@@ -27,8 +27,9 @@ jobs:
         run: npm ci
       - name: Build static site
         run: npm run build
-        env:
-          PAGES_BASE_PATH: /lumerapath
+        # Custom domain (bridge.lumerapath.com) serves from the root, so no
+        # PAGES_BASE_PATH here (that was only needed for the old
+        # goldengraphixstudios.github.io/lumerapath/ project-page path).
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

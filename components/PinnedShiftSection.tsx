@@ -121,7 +121,7 @@ export default function PinnedShiftSection() {
 
         {/* Header row */}
         <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-5 pt-24 md:pt-28 lg:px-8">
-          <div className="flex items-center gap-4 overflow-hidden">
+          <div className="pinned-kicker-wrap flex items-center gap-4 overflow-hidden">
             <span className="h-px w-10 shrink-0 bg-gold-400" aria-hidden />
             <span
               key={active.kicker}
@@ -130,7 +130,7 @@ export default function PinnedShiftSection() {
               {active.kicker}
             </span>
           </div>
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="pinned-stepnav flex items-center gap-2 sm:gap-2.5">
             {beats.map((beat, index) => (
               <button
                 key={beat.number}

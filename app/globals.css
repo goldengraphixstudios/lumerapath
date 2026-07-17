@@ -49,6 +49,11 @@ body {
   overflow-x: hidden;
 }
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 ::selection {
   background: var(--color-gold-400);
   color: var(--color-navy-950);
@@ -647,6 +652,15 @@ body {
   box-shadow: 0 0 0 3px rgb(195 146 46 / 0.18);
 }
 
+/* iOS Safari auto-zooms the viewport when a focused input's computed
+   font-size is under 16px. Bump it on touch devices only, so the desktop
+   type scale (0.95rem) is untouched. */
+@media (pointer: coarse), (max-width: 767px) {
+  .field-input {
+    font-size: 1rem;
+  }
+}
+
 /*  -  -  -  -  -  Decorative  -  -  -  -  -  */
 
 .navy-glow {
@@ -876,7 +890,7 @@ body {
   transform: scale(1.35);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px), (max-height: 640px) {
   .pinned-index {
     display: none;
   }
@@ -1002,7 +1016,14 @@ body {
   box-shadow: 0 22px 44px -24px rgb(195 146 46 / 0.4);
 }
 
-@media (max-width: 767px) {
+/* Per-phase week cards shown in static stacked mode only (all phases
+   visible at once there, so every phase needs its own week list rather
+   than the single "active phase" list the medallion column shows). */
+.journey-inline-weeks {
+  display: none;
+}
+
+@media (max-width: 1023px), (max-height: 640px) {
   .pinned-shift,
   .journey-lock {
     height: auto;
@@ -1031,12 +1052,19 @@ body {
     display: none;
   }
 
-  .journey-phase-group {
-    opacity: 1;
+  /* Static stacked mode: the medallion, phase pills, and step nav all
+     depend on scroll-driven activeIndex, which is meaningless once the
+     section is no longer pinned. Replace them with content that shows
+     everything at once (see .journey-inline-weeks below). */
+  .journey-medallion-col,
+  .journey-pills,
+  .pinned-stepnav,
+  .pinned-kicker-wrap {
+    display: none;
   }
 
-  .journey-phase-weeks {
-    grid-template-rows: 1fr;
+  .journey-inline-weeks {
+    display: grid;
   }
 }
 

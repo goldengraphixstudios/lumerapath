@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Figtree } from "next/font/google";
 import "./globals.css";
 import { ModalProvider } from "@/components/ModalContext";
@@ -21,6 +21,13 @@ const figtree = Figtree({
   variable: "--font-figtree",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#faf6ee",
+};
 
 export const metadata: Metadata = {
   title: {

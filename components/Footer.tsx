@@ -8,7 +8,7 @@ export default function Footer() {
   const { openModal } = useModal();
 
   return (
-    <footer className="navy-glow grain relative overflow-hidden text-cream">
+    <footer className="navy-glow grain relative overflow-hidden pb-[env(safe-area-inset-bottom)] text-cream">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/70 to-transparent"
         aria-hidden

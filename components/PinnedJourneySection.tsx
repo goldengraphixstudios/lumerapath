@@ -181,11 +181,32 @@ export default function PinnedJourneySection() {
                     <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">
                       {phase.description}
                     </p>
+
+                    {/* Static stacked mode only: every phase's weeks shown
+                        inline, since the medallion column (which only ever
+                        shows the "active" phase) is hidden there. */}
+                    <div className="journey-inline-weeks mt-6 grid gap-3 sm:grid-cols-2">
+                      {phase.weeks.map((w) => (
+                        <div key={w.week} className="journey-week-card">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[0.6rem] font-bold uppercase tracking-[0.18em] text-gold-700">
+                              {w.week}
+                            </span>
+                            <span className="rounded-full bg-gold-400/15 px-2.5 py-1 text-[0.54rem] font-bold uppercase tracking-[0.14em] text-gold-700">
+                              {w.tag}
+                            </span>
+                          </div>
+                          <p className="font-display mt-2 text-lg font-semibold leading-tight text-navy-900 sm:text-xl">
+                            {w.title}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </article>
                 ))}
               </div>
 
-              <div className="mt-4 flex flex-wrap gap-2.5">
+              <div className="journey-pills mt-4 flex flex-wrap gap-2.5">
                 {phases.map((phase, index) => (
                   <button
                     key={phase.phase}
@@ -207,8 +228,10 @@ export default function PinnedJourneySection() {
               </div>
             </div>
 
-            {/* Right: animated phase medallion */}
-            <div className="flex flex-col items-center" aria-hidden>
+            {/* Right: animated phase medallion (hidden in static stacked
+                mode; see .journey-inline-weeks above for the mobile
+                equivalent) */}
+            <div className="journey-medallion-col flex flex-col items-center" aria-hidden>
               <div className="journey-medallion">
                 {/* progress + phase-node ring */}
                 <svg className="journey-ring" viewBox="0 0 320 320" fill="none">

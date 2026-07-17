@@ -57,7 +57,7 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-40 pt-[env(safe-area-inset-top)] transition-all duration-500 ${
         scrolled || menuOpen
           ? "bg-cream/85 shadow-[0_10px_36px_-18px_rgb(18_32_63/0.35)] backdrop-blur-xl"
           : "bg-transparent"

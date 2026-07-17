@@ -24,7 +24,7 @@ function ModalShell({
   const { closeModal } = useModal();
   return (
     <div
-      className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-navy-950/70 px-4 py-3 backdrop-blur-sm"
+      className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-navy-950/70 px-4 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-sm"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) closeModal();
       }}
@@ -32,7 +32,7 @@ function ModalShell({
       aria-modal="true"
       aria-labelledby={labelledBy}
     >
-      <div className="modal-panel relative max-h-[calc(100svh-1.5rem)] w-full max-w-2xl overflow-y-auto rounded-3xl bg-cream shadow-[0_40px_90px_-30px_rgb(10_18_35/0.7)]">
+      <div className="modal-panel relative max-h-[calc(100svh-1.5rem-env(safe-area-inset-top)-env(safe-area-inset-bottom))] w-full max-w-2xl overflow-y-auto rounded-3xl bg-cream shadow-[0_40px_90px_-30px_rgb(10_18_35/0.7)]">
         <button
           type="button"
           onClick={closeModal}

@@ -70,19 +70,22 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <Image
-                src="/images/lumerapath-mark.png"
+                src="/images/bridge-lp-logo.png"
                 alt=""
                 aria-hidden
-                width={40}
-                height={48}
-                className="h-10 w-auto brightness-110"
+                width={44}
+                height={44}
+                className="h-11 w-11 object-contain brightness-110"
               />
               <span className="flex flex-col leading-none">
-                <span className="font-display text-xl font-semibold tracking-[0.06em] text-cream">
-                  LUMERA
+                <span className="font-display text-lg font-semibold leading-[1.05] tracking-[0.02em] text-cream">
+                  The Bridge
                 </span>
-                <span className="mt-0.5 text-[0.58rem] font-semibold uppercase tracking-[0.5em] text-gold-400">
-                  Path
+                <span className="mt-0.5 text-[0.58rem] font-semibold uppercase tracking-[0.3em] text-gold-400">
+                  Identity Reset&trade;
+                </span>
+                <span className="mt-1 text-[0.5rem] font-medium uppercase tracking-[0.18em] text-cream/50">
+                  by LumeraPath
                 </span>
               </span>
             </div>

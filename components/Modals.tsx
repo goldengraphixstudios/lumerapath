@@ -259,7 +259,7 @@ function ClarityCallModal() {
           </h3>
         </div>
         <div className="rounded-2xl border border-gold-400/35 bg-white/70 px-4 py-3 text-sm text-ink-soft shadow-[0_12px_28px_-22px_rgb(18_32_63/0.4)]">
-          <span className="font-semibold text-navy-900">15 min</span>
+          <span className="font-semibold text-navy-900">30 min</span>
           <span className="mx-2 text-gold-600">•</span>
           no pressure
         </div>

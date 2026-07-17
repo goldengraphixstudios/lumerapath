@@ -15,7 +15,12 @@ export async function submitLead(
   try {
     const res = await fetch(endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        // Formspree returns a JSON response (instead of redirecting to a
+        // hosted thank-you page) only when this header is present.
+        Accept: "application/json",
+      },
       body: JSON.stringify(payload),
     });
     return res.ok;

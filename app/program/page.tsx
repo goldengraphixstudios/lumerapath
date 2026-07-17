@@ -7,10 +7,35 @@ import Marquee from "@/components/Marquee";
 import PinnedJourneySection from "@/components/PinnedJourneySection";
 import Icon from "@/components/Icon";
 
+const pageDescription =
+  "An 8-week leadership program built by former executives, for driven women leaders ready to move from exhaustion and self-doubt to clear, confident direction.";
+
+const ogImages = [
+  {
+    url: "/images/og-cover.jpg",
+    width: 1200,
+    height: 630,
+    alt: "The Bridge Identity Reset™, an 8-week leadership program for high-performing women",
+  },
+];
+
 export const metadata: Metadata = {
   title: "The Bridge Identity Reset™, The 8-Week Program",
-  description:
-    "An 8-week leadership program built by former executives, for driven women leaders ready to move from exhaustion and self-doubt to clear, confident direction.",
+  description: pageDescription,
+  openGraph: {
+    title: "The Bridge Identity Reset™, The 8-Week Program",
+    description: pageDescription,
+    url: "https://bridge.lumerapath.com/program/",
+    siteName: "The Bridge Identity Reset™",
+    type: "website",
+    images: ogImages,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Bridge Identity Reset™, The 8-Week Program",
+    description: pageDescription,
+    images: ogImages,
+  },
 };
 
 const audience = [

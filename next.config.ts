@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
   },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_LEADS_ENDPOINT:
+      process.env.NEXT_PUBLIC_LEADS_ENDPOINT ?? "https://formspree.io/f/mrenponw",
   },
   ...(basePath ? { basePath, assetPrefix: basePath } : {}),
   turbopack: {

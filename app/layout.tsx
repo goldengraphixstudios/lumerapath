@@ -29,18 +29,36 @@ export const viewport: Viewport = {
   themeColor: "#faf6ee",
 };
 
+const siteDescription =
+  "The Bridge Identity Reset™ helps high-performing women leaders close the gap between the person the world sees and the woman quietly overwhelmed and running on empty, in 8 weeks.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bridge.lumerapath.com"),
   title: {
-    default: "The Bridge Identity Reset™ | Lumera Path",
-    template: "%s | Lumera Path",
+    default: "You Don't Need a New Strategy. You Need an Identity Reset.",
+    template: "%s | The Bridge Identity Reset™",
   },
-  description:
-    "An 8-week leadership program for high-performing women ready to stop leading from pressure, fear, and overwhelm, and start leading from purpose.",
+  description: siteDescription,
   openGraph: {
-    title: "The Bridge Identity Reset™ | Lumera Path",
-    description:
-      "Stop performing success. Start owning it. An 8-week program for driven women leaders built by former executives.",
+    title: "The Bridge Identity Reset™",
+    description: siteDescription,
+    url: "https://bridge.lumerapath.com",
+    siteName: "The Bridge Identity Reset™",
     type: "website",
+    images: [
+      {
+        url: "/images/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Bridge Identity Reset™, an 8-week leadership program for high-performing women",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Bridge Identity Reset™",
+    description: siteDescription,
+    images: ["/images/og-cover.jpg"],
   },
 };
 
